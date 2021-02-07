@@ -1,0 +1,16 @@
+Deploying first Docker Container
+a. Search Redis
+docker search redis
+b. Run Redis image in background
+docker run -d redis
+c. List all running containers
+docker ps
+d. Exposing Port
+docker run -d --name redisHostPort -p 6379:6379 redis:latest
+e. Randomly Assigning a Port and Checking it
+docker run -d --name redisDynamic -p 6379 redis:latest
+docker port redisDynamic 6379
+f. Persisting Data
+docker run -d --name redisMapped -v "$PWD/data":/data redis
+g. Running a Container in Foreground
+docker run -it ubuntu bash
