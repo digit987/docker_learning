@@ -1,0 +1,11 @@
+Building the DockerFile
+
+FROM nginx:alpine
+COPY . /usr/share/nginx/html
+
+Building the Static File Docker Image
+docker build -t webserver-image:v1 .
+
+Launching the image and binding it to port 80
+docker run -d -p 80:80 webserver-image:v1
+curl docker

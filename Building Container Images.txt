@@ -1,0 +1,12 @@
+#Base Image
+FROM nginx:1.11-alpine
+#Running Commands
+COPY index.html /usr/share/nginx/html/index.html
+#Exposing Port
+EXPOSE 80
+#Commands
+CMD ["nginx", "-g", "daemon off;"]
+#Building Containers
+docker build -t my-nginx-image:latest .
+#Launching Image
+docker run -d -p 80:80 my-nginx-image:latest
